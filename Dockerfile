@@ -12,5 +12,7 @@ WORKDIR /home/user/
 COPY install-zprezto.sh /home/user/
 COPY entry.py /usr/local/bin/
 RUN /home/user/install-zprezto.sh && rm install-zprezto.sh
+VOLUME /home/user/
+EXPOSE 9999/TCP
 ENTRYPOINT ["/usr/bin/dumb-init", "/usr/local/bin/entry.py"]
 CMD []
